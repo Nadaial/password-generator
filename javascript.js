@@ -12,7 +12,6 @@ var generateEl = document.getElementById('generate');
 
 
 var randomFunc ={
-
 low: getRandomLower,
 up: getRandomUpper,
 num: getRandomNumber,
@@ -41,9 +40,34 @@ displayEl.innerText= generatePassword(
 
 //Genaerateb Password
 
-function generatePassword(low, up, num, sym) {
+function generatePassword(low, up, num, sym, length) {
 
-}
+
+  var password="";
+
+var checkedVal = low + up + num +sym;
+
+  console.log('checkedVal', checkedVal);
+
+  var valArray = [{low},  {up}, {num}, {sym}].filter(
+    item => Object.values (item)[0]
+  );
+
+  console.log('valArray', valArray);
+
+  if(checkedVal===0){
+    return "";
+  }
+    for(let i=0; i< length; i+= checkedVal){
+      valArray.forEach(type =>{
+        var funcName =Object.keys(type)[0];
+generatePassword += randomFunc[funcName]();
+
+console.log('funcName:', funcName);
+      });
+    }
+  }
+
 //getting lower case characters
 function getRandomLower(){
   return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
