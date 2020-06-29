@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <script src="./javascript.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Password Generator</a>
+        </div>
+      </nav>
+<div class="container-fluid ">
+    <div clas="row">
+
+        <div class="col-lg-8 col-sm-12 mx-auto bg-transparent mt-5">
+
+<!--Password length input-->
+            <div class="content p-5 mr-0 ">
+              <h3 class="m-2"> Password length</h3>
+                <input type="number" id="length" min="8" max="128" value="20">
+                <br>
+            </div>
+        <div>
+                <h3 class="m-2">Include Special Characters? </h3>
+                                  <!-- Default inline 1-->
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <input type="checkbox"  id="special" checked/>
+                                      </div>
+                                    </div>
+</div>
+</div>
+                <br>
+                <div>
+                                <h3 class="m-2">Include numbers? </h3>
+                                                               <!-- Default inline 3-->
+                                 <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <input type="checkbox" id="numbers" checked/>
+                                      </div>
+                                    </div>
+
+  <br>  
+                   <h3 class="m-2">Include Upper Case letters? </h3>
+                   <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox"  id="up" checked/>
+                      </div>
+  
+  <!-- Default inline 6-->
+ 
+              <br>  
+                   <h3 class="m-2">Include Lower Case letters? </h3>        
+                   <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox"  id="low" checked/>
+                      </div>
+<br>
+                    <h3 class="m-2"> Your New Password</h3>
+                      <span id="result"></span>
+                      <br>
+                      <button class="mt-2" onclick="//" id="generate"> Generate </button>
+                      <button class="mt-2" onclick="//" id="copy"> Copy to clipboard </button>
+                      
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+                </div>
+                </div>
+                </div>
+                </div>
+    <script src="./javascript.js"></script>
+  </body>
+</html>
