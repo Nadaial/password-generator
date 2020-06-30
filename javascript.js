@@ -18,7 +18,7 @@ num: getRandomNumber,
 sym: getRandomSymbol
 }; 
 // Event listener
-generateEl.addEventListener('click', () => {
+generateEl.addEventListener("click", () => {
 var length= +lengthEl.value; 
 var lower = lowEl.checked;
 var upper =  upEl.checked; 
@@ -34,7 +34,7 @@ displayEl.innerText= generatePassword(
   numbers,
   length
   );
-
+console.log(displayEl.innerText);
 });
 
 
@@ -43,7 +43,7 @@ displayEl.innerText= generatePassword(
 function generatePassword(low, up, num, sym, length) {
 
 
-  var password="";
+var finalPassword="";
 
 var checkedVal = low + up + num +sym;
 
@@ -53,17 +53,20 @@ var checkedVal = low + up + num +sym;
     item => Object.values (item)[0]
   );
 
-  console.log('valArray', valArray);
-
+  
   if(checkedVal===0){
     return "";
   }
     for(let i=0; i< length; i+= checkedVal){
       valArray.forEach(type =>{
         var funcName =Object.keys(type)[0];
-generatePassword += randomFunc[funcName]();
+finalPassword += randomFunc[funcName]();
 
-console.log('funcName:', funcName);
+console.log(final);
+var final =finalPassword.slice(0, length);
+return final;
+
+
       });
     }
   }
@@ -89,4 +92,4 @@ function getRandomSymbol(){
   return symbols [Math.floor(Math.random()* symbols.length)];
 
 }
-console.log(getRandomSymbol());
+;
