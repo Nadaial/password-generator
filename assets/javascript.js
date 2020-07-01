@@ -27,7 +27,7 @@ var numbers = numEl.checked;
 
 
 
-displayEl.textContent= generatePassword( 
+displayEl.innerText= generatePassword( 
   lower,
   upper,
   special,
@@ -50,20 +50,20 @@ var valArray = [{low},  {up}, {num}, {sym}].filter(item => Object.values(item)[0
     return '';
   }
 
-    for(i=0; i <=length; i+= checkedVal){
+    for(let i=0; i <=length; i+= checkedVal){
       valArray.forEach(type => {
         var funcName =Object.keys(type)[0];
      
 finalPassword += randomFunc[funcName]();
+      });
+    }
 
-
-let finalPass =finalPassword;
+let finalPass =finalPassword.slice (0, length);
 console.log(finalPass);
 return finalPass;
 
-
-      });
-    }
+   
+    
   }
 
 //getting lower case characters
