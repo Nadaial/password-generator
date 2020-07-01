@@ -18,16 +18,16 @@ num: getRandomNumber,
 sym: getRandomSymbol
 }; 
 // Event listener
-generateEl.addEventListener("click", () => {
+generate.addEventListener("click", () => {
 var length= +lengthEl.value; 
 var lower = lowEl.checked;
 var upper =  upEl.checked; 
-var special =  spCharEl.checked; 
+var special = spCharEl.checked; 
 var numbers = numEl.checked; 
 
-console.log(lower, upper, special,numbers)
 
-displayEl.innerText= generatePassword( 
+
+displayEl.textContent= generatePassword( 
   lower,
   upper,
   special,
@@ -41,30 +41,25 @@ console.log(displayEl.innerText);
 //Genaerateb Password
 
 function generatePassword(low, up, num, sym, length) {
+let finalPassword='';
+var checkedVal = low + up + num + sym;
+var valArray = [{low},  {up}, {num}, {sym}].filter(item => Object.values(item)[0]);
 
-
-var finalPassword="";
-
-var checkedVal = low + up + num +sym;
-
-  console.log('checkedVal', checkedVal);
-
-  var valArray = [{low},  {up}, {num}, {sym}].filter(
-    item => Object.values (item)[0]
-  );
-
-  
+    // If none of the check boxes are selected
   if(checkedVal===0){
-    return "";
+    return '';
   }
-    for(let i=0; i< length; i+= checkedVal){
-      valArray.forEach(type =>{
+
+    for(i=0; i <=length; i+= checkedVal){
+      valArray.forEach(type => {
         var funcName =Object.keys(type)[0];
+     
 finalPassword += randomFunc[funcName]();
 
-console.log(final);
-var final =finalPassword.slice(0, length);
-return final;
+
+let finalPass =finalPassword;
+console.log(finalPass);
+return finalPass;
 
 
       });
@@ -83,7 +78,7 @@ function getRandomUpper(){
 }
 
 function getRandomNumber(){
-  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+  return +String.fromCharCode(Math.floor(Math.random() * 10 + 48));
 
 }
 
